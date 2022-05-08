@@ -1,4 +1,8 @@
 var loadRowTimes = function () {
+  //display current date
+  var CurrentDate = moment().format("MMM Do YYYY");
+  $("#currentDay").append('<span id="add_here">' + CurrentDate + "</span>");
+
   var currentHour = moment().format("HH");
   //loop each row and class time block
   $(".time-block").each(function (index, value) {
