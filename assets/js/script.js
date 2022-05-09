@@ -4,7 +4,7 @@ sheduleStr = {};
 
 var loadRowTimes = function () {
   //display current date
-  var CurrentDate = moment().format("MMM Do YYYY");
+  var CurrentDate = moment().format("MMMM dddd YYYY");
   $("#currentDay").append('<span id="add_here">' + CurrentDate + "</span>");
 
   var currentHour = moment().format("HH");
@@ -22,7 +22,6 @@ var loadRowTimes = function () {
     var intHour = parseInt(hour);
     //get the current hour
     var intCurrent = parseInt(currentHour);
-    //intCurrent = 12;
 
     // if localstorage loop validate with id get text
     var time = "#" + id;
@@ -62,6 +61,10 @@ $(".saveBtn").click(function () {
     sheduleStr.note = noteText;
 
     saveNotes();
+    $("#saveNote").find("span").remove();
+    $("#saveNote").append(
+      '<span id="add_here">' + noteText + " added to localstorage" + "</span>"
+    );
   }
 });
 
